@@ -7,7 +7,7 @@
 </head>
 <body>
         <?php
-        include 'var.php';
+        include 'var.php'; // Подключил переменные
         ?>
         <table class="table">
             <tr>
@@ -17,29 +17,29 @@
             </tr>
             <tr>
                 <td>
-                    <?php echo date('d-m-Y'); ?>
+                    <?php echo date('d-m-Y'); ?> // С помощью функции date вывел текущую дату
                 </td>
                 <td>
                     <?php
 
-                        echo $desired_day, '-', $desired_month, '-', $desired_year; 
+                        echo $desired_day, '-', $desired_month, '-', $desired_year;  // Вывел переменные с датой дэдлайна
                     ?>
                 </td>
                 <td>
                     <?php
-                        function month($a, $b) {
-                            global $desired_month, $current_month, $day_left;
+                        function month($x, $y) { // Создал функцию с двумя аргументами - x,y
+                            global $desired_month, $current_month, $day_left; // Пометил,что используються глобальные переменные
 
-                            if($desired_month - $current_month == $a) {
-                                echo ($day_left  + $b), '.д';
+                            if($desired_month - $current_month == $x) { // Если из нужного месяца вычесть нынешний месяц = x   Будет выполняться следующий код
+                                echo ($day_left  + $y), '.д'; // Количество оставшихся дней($day_left) + y
                             }
                         }
 
 
-                        month(0, false);
+                        month(0, false);// x = 0; y = false
 
-                        month(1,30);
-                        month(2,60);
+                        month(1,30); // x = 1;y = 30
+                        month(2,60); // и тд
                         month(3,90);
                         month(4,120);
                         month(5,150);
