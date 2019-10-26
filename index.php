@@ -36,24 +36,19 @@
                         }
 
 
-                        month(0, false);// x = 0; y = false
+                    static $month_day = 0;
+                    $month_day = $month_day + 30;
 
-                        month(1,30); // x = 1;y = 30
-                        month(2,60); // и тд
-                        month(3,90);
-                        month(4,120);
-                        month(5,150);
-                        month(6,180);
-                        month(7,210);
-                        month(8,240);
-                        month(9,270);
-                        month(10,300);
-                        month(11,330);
+                    month();
+
+                    for( $i = 1;$i < 11; $i++ ) {
+                        month($i,$month_day);
+                    }
                     ?>
                 </td>
             </tr>
         </table>
 
-    
+
 </body>
 </html>
